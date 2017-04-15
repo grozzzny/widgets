@@ -1,0 +1,23 @@
+{
+    "name": "grozzzny/widgets",
+    "description": "Widgets for Yii",
+    "keywords": ["yii", "widgets"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitriy Groznyy",
+            "email": "grozzzny@gmail.com",
+            "homepage": "http://pr-kenig.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "grozzzny\\widgets\\": ""
+        }
+    }
+}
