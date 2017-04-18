@@ -25,7 +25,6 @@ class SwitchCheckbox extends Widget
      */
     public function run()
     {
-
         return $this->render('index', [
             'model' => $this->model,
             'attributes' => $this->attributes
