@@ -13,6 +13,10 @@ class SidebarAsset extends AssetBundle
         'css/sidebar.css'
     ];
 
+    public $js = [
+        'js/js-cookie.js',
+    ];
+
     public $depends = [
         'yii\web\JqueryAsset',
     ];
