@@ -10,7 +10,7 @@ $ php composer.phar require grozzzny/widgets "dev-master"
 ```
 
 
-##Sidebar widget
+## Sidebar widget
 ```php
 Sidebar::widget([
     'options' => [
