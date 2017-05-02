@@ -42,3 +42,21 @@ Sidebar::widget([
 <div class="sidebar__copy-logo"></div>
 <div class="sidebar__copy">© 2017 GROZZZNY</div>
 ```
+
+
+## Seo widget
+
+```html
+<html prefix="og: http://ogp.me/ns#">
+</html>
+```
+
+```php
+//Register metatags + og
+Seo::widget([
+    'title' => $page->seo('title', $page->model->title),
+    'description' => $page->seo('description'),
+    'image' => '/images/logo.png',
+    'keywords' => 'Губка боб, квадратные штаны'
+]);
+```
