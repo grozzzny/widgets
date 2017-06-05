@@ -1,0 +1,47 @@
+
+/*************************
+    - Youtube player -
+*************************/
+.mbYTP_wrapper:after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    z-index:1;
+    background-image:url('../images/overlay.png');
+    background-color:rgba(95,96,96,0.4);
+}
+
+.player-controls {
+    position:absolute;
+    top:190px;
+    right:25%;
+}
+
+.player-controls a {
+    text-align: center;
+    background:none;
+    color:#fff !important;
+    outline:none;
+    width:30px;
+    margin:5px;
+    border:1px solid #F8F8F8;
+    height:30px;
+    line-height:28px;
+    font-size:12px;
+    text-decoration:none !important;
+    border-radius:50%;
+    -webkit-transition:all 0.3s ease-in-out !important;
+    -moz-transition:all 0.3s ease-in-out !important;
+    transition:all 0.3s ease-in-out !important;
+}
+
+.player-controls a:hover {
+    color:#fff;
+    text-decoration:none !important;
+    -webkit-transition:all 0.3s ease-in-out !important;
+    -moz-transition:all 0.3s ease-in-out !important;
+    transition:all 0.3s ease-in-out !important;
+}
