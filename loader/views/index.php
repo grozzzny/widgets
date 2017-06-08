@@ -1,4 +1,4 @@
 <!-- Loader -->
 <div class="page-loader">
-    <div class="progress">Loading...</div>
+    <div class="progress" style="border-left-color: <?=$color?>">Loading...</div>
 </div>

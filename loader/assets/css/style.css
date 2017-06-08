@@ -24,10 +24,10 @@
     top:50vh;
     left:50vw;
     background:#fff;
-    border-top:0.8em solid rgba(35, 35, 35, 0.2);
-    border-right:0.8em solid rgba(35, 35, 35, 0.2);
-    border-bottom:0.8em solid rgba(35, 35, 35, 0.2);
-    border-left:0.8em solid #24b7a4;
+    border: 0.8em solid transparent;
+    border-top-color:rgba(35, 35, 35, 0.2);
+    border-right-color:rgba(35, 35, 35, 0.2);
+    border-bottom-color:rgba(35, 35, 35, 0.2);
     -webkit-transform:translateZ(0);
     -moz-transform:translateZ(0);
     -ms-transform:translateZ(0);

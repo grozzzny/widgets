@@ -6,6 +6,8 @@ use yii\base\Widget;
 
 class LoaderWidget extends Widget
 {
+    public $color = '#24b7a4';
+
     public function init()
     {
         parent::init();
@@ -18,7 +20,7 @@ class LoaderWidget extends Widget
      */
     public function run()
     {
-        return $this->render('index');
+        return $this->render('index', ['color' => $this->color]);
     }
 
     /**
