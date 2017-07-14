@@ -3,6 +3,7 @@
     "description": "Widgets for Yii",
     "keywords": ["yii", "widgets"],
     "type": "yii2-extension",
+    "minimum-stability": "dev",
     "license": "MIT",
     "authors": [
         {

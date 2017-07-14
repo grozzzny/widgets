@@ -60,3 +60,22 @@ Seo::widget([
     'keywords' => 'Губка боб, квадратные штаны'
 ]);
 ```
+
+
+## Schema organization widget
+
+```html
+use yii\easyii\models\Setting;
+```
+
+```php
+<?=\grozzzny\widgets\schema_organization\SchemaOrganizationWidget::widget([
+    'name' => Setting::get('organization_name'),
+    'logo' => Setting::get('organization_logo'),
+    'index' => Setting::get('organization_index'),
+    'city' => Setting::get('organization_city'),
+    'address' => Setting::get('organization_address'),
+    'phone' => Setting::get('organization_phone'),
+    'email' => Setting::get('organization_email'),
+])?>
+```
