@@ -30,6 +30,8 @@ class StaticMapWidget extends Widget
 
     public $height = 300;
 
+    public $zoom = 15;
+
     public $style_point = 'pm2blm';
 
     public $points = [];
@@ -42,6 +44,7 @@ class StaticMapWidget extends Widget
     {
         $this->setTypeMap();
         $this->setSize();
+        $this->setZoom();
         $this->setPoints();
 
         $url = $this->url_api . '?' . http_build_query($this->params);
@@ -57,6 +60,12 @@ class StaticMapWidget extends Widget
     protected function setSize()
     {
         $this->params += ['size' => $this->width.','.$this->height];
+    }
+
+
+    protected function setZoom()
+    {
+        $this->params += ['z' => $this->zoom];
     }
 
     protected function setPoints()
