@@ -24,7 +24,10 @@ class StaticMapWidget extends Widget
     private $url_api = 'https://static-maps.yandex.ru/1.x/';
     private $params = [];
 
+
+
     public $width = 450;
+
     public $height = 300;
 
     public $style_point = 'pm2blm';
