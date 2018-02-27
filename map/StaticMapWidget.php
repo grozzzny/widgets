@@ -4,8 +4,7 @@ namespace grozzzny\widgets\map;
 
 
 use yii\base\Widget;
-use yii\helpers\ArrayHelper;
-use yii\helpers\Url;
+use yii\helpers\Html;
 
 /**
  * Class StaticMapWidget
@@ -32,6 +31,8 @@ class StaticMapWidget extends Widget
 
     public $points = [];
 
+    public $options = [];
+
     public $type_map = self::TYPE_MAP;
 
     public function run()
@@ -40,7 +41,9 @@ class StaticMapWidget extends Widget
         $this->setSize();
         $this->setPoints();
 
-        return $this->url_api . '?' . http_build_query($this->params);
+        $url = $this->url_api . '?' . http_build_query($this->params);
+
+        return Html::img($url, $this->options);
     }
 
     protected function setTypeMap()
