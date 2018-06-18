@@ -37,7 +37,8 @@ class GmapWidget extends Widget
 
     public function registerJs()
     {
-        $this->getView()->registerJsVar('gmapOptions', $this->pluginOptions);
-        $this->getView()->registerJs("$('#".$this->id."').gMap(gmapOptions);");
+        $variable = 'gmapOptions' . $this->id;
+        $this->getView()->registerJsVar($variable, $this->pluginOptions);
+        $this->getView()->registerJs("$('#".$this->id."').gMap(".$variable.");");
     }
 }
