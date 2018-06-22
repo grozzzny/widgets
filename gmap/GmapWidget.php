@@ -25,7 +25,7 @@ class GmapWidget extends Widget
 
     public function run()
     {
-        $this->options = ArrayHelper::merge(['id' => $this->id], $this->options, $this->_defaultOptions);
+        $this->options = ArrayHelper::merge(['id' => $this->id], $this->_defaultOptions, $this->options);
         echo Html::tag('div','', $this->options);
     }
 
