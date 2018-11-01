@@ -77,7 +77,7 @@ class Seo extends Widget
     {
         if(empty($this->image)) return false;
 
-        $this->image = preg_match('/^http/i', $this->image) ? $this->image : Yii::$app->request->hostInfo . $this->image;
+        $this->image = preg_match('/^http?/i', $this->image) ? $this->image : Yii::$app->request->hostInfo . $this->image;
 
         Yii::$app->view->registerMetaTag([
             'property' => 'og:image',
