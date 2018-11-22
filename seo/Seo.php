@@ -10,6 +10,8 @@ class Seo extends Widget
     public $title = null;
     public $description = null;
     public $image = null;
+    public $image_width = null;
+    public $image_height = null;
     public $keywords = null;
     public $site_name = null;
     public $url = null;
@@ -86,6 +88,21 @@ class Seo extends Widget
             'property' => 'og:image',
             'content' => $this->image,
         ]);
+
+        if(!empty($this->image_width)){
+            Yii::$app->view->registerMetaTag([
+                'property' => 'og:image:width',
+                'content' => $this->image_width,
+            ]);
+        }
+
+        if(!empty($this->image_height)){
+            Yii::$app->view->registerMetaTag([
+                'property' => 'og:image:height',
+                'content' => $this->image_height,
+            ]);
+        }
+
     }
 
     protected function regiserUrl()
