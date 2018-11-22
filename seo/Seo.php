@@ -15,6 +15,7 @@ class Seo extends Widget
     public $url = null;
     public $locale = null;
     public $canonical = null;
+    public $type = null;
 
     public function run()
     {
@@ -33,6 +34,8 @@ class Seo extends Widget
         $this->regiserSiteName();
 
         $this->regiserCanonical();
+
+        $this->regiserType();
     }
 
     protected function regiserTitle()
@@ -102,6 +105,16 @@ class Seo extends Widget
         Yii::$app->view->registerMetaTag([
             'property' => 'og:locale',
             'content' => $locale,
+        ]);
+    }
+
+    protected function regiserType()
+    {
+        $type = empty($this->type) ? 'website' : $this->type;
+
+        Yii::$app->view->registerMetaTag([
+            'property' => 'og:type',
+            'content' => $type,
         ]);
     }
 
