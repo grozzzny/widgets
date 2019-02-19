@@ -79,3 +79,127 @@ use yii\easyii\models\Setting;
     'email' => Setting::get('organization_email'),
 ])?>
 ```
+
+## Map yandex widget
+
+##### input
+
+```php
+<?= MapConstructorWidget::widget([
+    'model' => $this->model,
+    'attribute' => $this->attribute,
+    'search_id' => $settings->search_id,
+    'type' => $type //  placemark | polygon | polyline | route 
+]); ?>
+```
+
+##### Show coords
+
+```php
+<?= MapWidget::widget([
+        'coords' => [
+            [
+                'hash' => 'event_20',
+                'type' => 'placemark', //  placemark | polygon | polyline | route 
+                'coords' => [54.718504, 20.509194],
+                'src' => null,
+                //'src' => 'images/location-14-512.png',
+                'icoColor' => 'darkGreen', //blue | darkGreen | red | violet | darkOrange | black | night | brown | yellow | darkBlue | green | pink | orange | gray | lightBlue | olive
+                'sizeIco' => 1,
+                'title' => 'Новая метка',
+                'content' => 'Контент новой метки HTML'
+            ],
+            [
+                'hash' => 'event_5',
+                'type' => 'polygon',
+                'coords' => [
+                    [54.719444, 20.505435],
+                    [54.719891, 20.508139],
+                    [54.716376, 20.509555],
+                    [54.715898, 20.505896]
+                ],
+                'title' => 'Полигон',
+                'content' => 'Контент полигона HTML',
+                'fillColor' => '#ff0600',
+                'strokeColor' => '#5b0003',
+                'strokeWidth' => 1,
+                'fillOpacity' => '0.1'
+            ],
+            [
+                'hash' => 'event_6',
+                'type' => 'polyline',
+                'coords' => [
+                    [54.716407, 20.509812],
+                    [54.716948, 20.512902],
+                    [54.717985, 20.512859],
+                    [54.720398, 20.514133]
+                ],
+                'title' => 'Ломанная',
+                'content' => 'Контент ломанной <b>HTML</b>',
+                'strokeWidth' => 2,
+                'strokeColor' => '#002eb8'
+            ],
+            [
+                'hash' => 'event_7',
+                'type' => 'route',
+                'mode' => 'auto', //masstransit | pedestrian | auto
+                'coords' => [
+                    [54.715547, 20.513425],
+                    [54.715920, 20.505893]
+                ],
+                'contentStart' => 'Контент маршрута в точке START <i>HTML</i>',
+                'srcStart' => 'images/20151120224636875.png',
+                'sizeIcoStart' => 1,
+
+                'contentFinish' => 'Контент маршрута в точке FINISH <i>HTML</i>',
+                'srcFinish' => 'images/2015923223658445.png',
+                'sizeIcoFinish' => 1,
+
+                'strokeWidth' => 20,
+                'strokeColor' => '#002eb8'
+            ],
+            [
+                'hash' => 'event_1',
+                'type' => 'placemark',
+                'coords' => [54.722695, 20.408430],
+                //'src' => null,
+                'src' => 'images/location-14-512.png',
+                'icoColor' => 'darkGreen', //blue | darkGreen | red | violet | darkOrange | black | night | brown | yellow | darkBlue | green | pink | orange | gray | lightBlue | olive
+                'sizeIco' => 1,
+                'title' => 'Концерт Руки Верх',
+                'content' => 'Концерт Руки Верх. <a href="view.html">Подробнее..</a>'
+            ],
+            [
+                'hash' => 'event_2',
+                'type' => 'polyline',
+                'coords' => [
+                    [54.670993, 20.494947],
+                    [54.680543, 20.543013]
+                ],
+                'title' => 'Концерт Баскова',
+                'content' => 'Концерт Баскова. <a href="view.html">Подробнее..</a>',
+                'strokeWidth' => 2,
+                'strokeColor' => '#002eb8'
+            ],
+            [
+                'hash' => 'event_3',
+                'type' => 'route',
+                'mode' => 'auto', //masstransit | pedestrian | auto
+                'coords' => [
+                    [54.749713, 20.539236],
+                    [54.737597, 20.573225]
+                ],
+                'contentStart' => 'Коцерт Пугачевой, Галкина, Урганта, Харламова, Бондарчука иииии Паши Воли. <a href="view.html">Подробнее..</a>',
+                'srcStart' => 'images/20151120224636875.png',
+                'sizeIcoStart' => 1,
+
+                'contentFinish' => 'Коцерт Пугачевой, Галкина, Урганта, Харламова, Бондарчука иииии Паши Воли. <a href="view.html">Подробнее..</a>',
+                'srcFinish' => 'images/2015923223658445.png',
+                'sizeIcoFinish' => 1,
+
+                'strokeWidth' => 20,
+                'strokeColor' => '#002eb8'
+            ],
+        ],
+    ]) ?>
+```
