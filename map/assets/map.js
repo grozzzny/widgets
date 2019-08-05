@@ -265,7 +265,7 @@ function Map(settings) {
                 if('#' + el.options.get('hash') == window.location.hash){
                     if (el.options._name != 'multiRoute'){
                         t.map.setBounds(el.geometry.getBounds(), {checkZoomRange: true});
-                        el.balloon.open();
+                        //el.balloon.open();
                     } else {
                         if(el.getBounds() == null){
                             el.events.once("boundschange", function () {
