@@ -121,7 +121,7 @@ function Map(settings) {
                 }, {
                     strokeColor: ob.strokeColor,
                     strokeWidth: ob.strokeWidth,
-                    strokeOpacity: 1,
+                    strokeOpacity: typeof ob.strokeOpacity === 'undefined' ? 1 : ob.strokeOpacity,
                     hash: ob.hash,
                     title: ob.title,
                     openBalloonOnClick: false
