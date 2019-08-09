@@ -212,20 +212,20 @@ function Map(settings) {
             t.map.geoObjects.each(function (el, i) {
                 if (el.options._name != 'multiRoute') {
                     el.balloon.close();
-                    t.view.placemark.activeOff(el);
+                    // t.view.placemark.activeOff(el);
                 }
             });
-            $(window).off('hashchange', t.view.showInit);
-            location.hash = '#' + ob.hash;
-            setTimeout(function () {
-                $(window).on('hashchange', t.view.showInit);
-            }, 300);
-            t.view.placemark.activeOn(point);
-            point.balloon.open(null,{},{panelMaxMapArea:'Infinity'});
-            $('.js-slideout-close').each(function () {
-                $(this).removeClass('active');
-            });
-            $('[href="#'+ob.hash+'"]').parent().addClass('active');
+            // $(window).off('hashchange', t.view.showInit);
+            // location.hash = '#' + ob.hash;
+            // setTimeout(function () {
+            //     $(window).on('hashchange', t.view.showInit);
+            // }, 300);
+            // t.view.placemark.activeOn(point);
+            point.balloon.open(null,{},{/*panelMaxMapArea:'Infinity'*/});
+            // $('.js-slideout-close').each(function () {
+            //     $(this).removeClass('active');
+            // });
+            // $('[href="#'+ob.hash+'"]').parent().addClass('active');
         },
 
         /**
