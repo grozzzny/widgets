@@ -3,10 +3,14 @@ function Map(settings) {
     var t = this,
         $elem = $();
 
+    var clusterer,
+        geoObjects = [];
+
     t.settings = {
         center: [54.70739, 20.507307],
         coords: [],
         zoom: 14,
+        enableClusterer: false,
         id: ''
     };
 
@@ -24,6 +28,34 @@ function Map(settings) {
     t.build = function () {
         t.buildMap();
         t.view.run();
+    };
+
+    t.initClusterer = function () {
+        if(!t.settings.enableClusterer) return;
+
+        var first_point = t.settings.coords[0],
+            clustererSettings = {
+                clusterNumbers: [10],
+                clusterIconContentLayout: null
+            };
+
+
+        if(typeof first_point.src === 'undefined' || first_point.src === ''){
+            clustererSettings['preset'] = 'islands#invertedVioletClusterIcons';
+        } else {
+            clustererSettings['clusterIcons'] = [
+                {
+                    href: first_point.src,
+                    size: [50, 50],
+                    offset: [-25, -50]
+                }
+            ];
+        }
+
+        clusterer = new ymaps.Clusterer(clustererSettings);
+
+        clusterer.add(geoObjects);
+        t.map.geoObjects.add(clusterer);
     };
 
     t.buildMap = function () {
@@ -82,7 +114,11 @@ function Map(settings) {
                     iconCaption: ob.title
                 }, option);
 
-                t.map.geoObjects.add(placemark);
+                if(t.settings.enableClusterer){
+                    geoObjects.push(placemark);
+                } else {
+                    t.map.geoObjects.add(placemark);
+                }
             }
         },
 
@@ -236,6 +272,8 @@ function Map(settings) {
                 t.view[this.type].add(this);
             });
 
+            t.initClusterer();
+
             t.setCenter();
         },
 
@@ -289,7 +327,7 @@ function Map(settings) {
         zoom = zoom ? zoom : t.settings.zoom;
 
         //Получим область координат нанесенных точек и сцентрируем карту
-        var bounds = t.map.geoObjects.getBounds();
+        var bounds = t.settings.enableClusterer ? clusterer.getBounds() : t.map.geoObjects.getBounds();
         t.map.setBounds(bounds, {
             checkZoomRange: true
         }).then(function(){
