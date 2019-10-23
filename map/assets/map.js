@@ -111,7 +111,8 @@ function Map(settings) {
                 var placemark = new ymaps.Placemark(ob.coords, {
                     hintContent: ob.title,
                     balloonContentBody: ob.content,
-                    iconCaption: ob.title
+                    iconCaption: ob.title,
+                    clusterCaption: ob.title
                 }, option);
 
                 if(t.settings.enableClusterer){
