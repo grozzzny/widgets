@@ -13,6 +13,7 @@ class MapConstructorWidget extends InputWidget
     const TYPE_POLYGON = 'polygon';
     const TYPE_POLYLINE = 'polyline';
     const TYPE_ROUTE = 'route';
+    const TYPE_ARROW = 'arrow';
 
     public $search_id = '';
     public $type = self::TYPE_PLACEMARK;
