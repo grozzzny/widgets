@@ -257,15 +257,6 @@ function MapConstructor(settings) {
                     polyline.geometry.setCoordinates(new_coords);
                     $elem.trigger(EVENT_GET_COORDS, [new_coords]);
                 });
-
-
-                var arrow = new Arrow([[57.733835, 38.788227], [55.833835, 35.688227]], null, {
-                    geodesic: true,
-                    strokeWidth: 5,
-                    opacity: 0.5,
-                    strokeStyle: 'shortdash'
-                });
-                myMap.geoObjects.add(arrow);
             });
 
         }
