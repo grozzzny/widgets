@@ -9,12 +9,12 @@ class MapConstructorAsset extends AssetBundle
     public $sourcePath = '@grozzzny/widgets/map/assets';
 
     public $js = [
-        '//api-maps.yandex.ru/2.1/?lang=ru_RU',
         'map-constructor.js',
         'ymaps.arrow.js',
     ];
 
     public $depends = [
         'yii\web\JqueryAsset',
+        'grozzzny\widgets\map\assets\MapApiAsset',
     ];
 }
